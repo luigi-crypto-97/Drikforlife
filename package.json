@@ -1,0 +1,15 @@
+{
+  "name": "grimorio-del-mixologist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Slot machine a premi in natura per bar: 10 giri gratis per ogni drink, nessuna puntata in denaro.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "node tools/build.mjs",
+    "simulate": "node tools/simulate.mjs",
+    "report": "node tools/report.mjs",
+    "serve": "python3 -m http.server 8080 --directory docs"
+  },
+  "license": "UNLICENSED"
+}

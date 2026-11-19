@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#12030a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Grimorio">
+<meta name="description" content="Slot a premi in consumazioni per il bar: 10 giri gratis per ogni drink, nessuna puntata in denaro.">
+<title>Il Grimorio del Mixologist</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div class="bg"></div>
+  <div class="bg bg-bonus"></div>
+
+  <header class="marquee">
+    <div class="bar-name"><i></i><span id="bar-name"></span><i></i></div>
+    <h1 class="title">Il Grimorio <small>del</small> Mixologist</h1>
+    <div class="bonus-hud" id="bonus-hud" hidden>
+      <div class="bh-box"><span class="bh-label">Giri bonus</span><span class="bh-count" id="bonus-count">0 / 10</span></div>
+      <div class="bh-box"><span class="bh-label">Simbolo speciale</span><span class="bh-special" id="bonus-special"></span></div>
+    </div>
+  </header>
+
+  <main id="stage" class="stage">
+    <div class="frame" id="frame">
+      <div class="bulbs" id="bulbs"></div>
+      <div class="frame-inner">
+        <div class="markers" id="markers-left"></div>
+        <div class="reels-wrap">
+          <div class="reels" id="reels"></div>
+          <svg class="lines" id="lines" viewBox="0 0 500 300" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="attract" id="attract">
+            <div class="attract-kicker">Ordina un drink</div>
+            <div class="attract-big" id="attract-big">ricevi 10 giri gratis</div>
+            <div class="attract-ladder"><span>100 Cocktail</span><span>10 Cocktail</span><span>Drink Omaggio</span><span>Sconto 20%</span><span>Sconto 10%</span></div>
+            <div class="attract-small">Chiedi al barista di attivare i tuoi giri</div>
+            <button class="btn small" id="attract-info" type="button">Regole e premi</button>
+          </div>
+        </div>
+        <div class="markers" id="markers-right"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="msg" id="msg"></div>
+
+  <footer class="console">
+    <div class="meter"><span class="meter-label">Giri</span><span class="meter-val" id="spins-left">0</span></div>
+    <div class="meter"><span class="meter-label">Scrigno</span><span class="meter-val" id="prizes-count">0</span></div>
+    <button class="ctl" id="info-btn" type="button">Regole</button>
+    <button class="spin-btn" id="spin-btn" type="button"><span id="spin-label">GIRA</span></button>
+    <button class="ctl" id="auto-btn" type="button">Auto</button>
+    <button class="ctl" id="turbo-btn" type="button">Turbo</button>
+    <button class="ctl icon" id="sound-btn" type="button" aria-label="Audio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="waves" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path class="mute" d="M16 9l6 6M22 9l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </footer>
+
+  <div class="ticker"><span>Gioco gratuito riservato ai maggiorenni · Nessuna puntata in denaro · Premi solo in consumazioni, non convertibili in denaro · Regolamento disponibile al banco · Bevi responsabilmente</span></div>
+
+  <button class="staff-btn" id="staff-btn" type="button" aria-label="Area barista">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" fill="none"/><rect x="5" y="10" width="14" height="10" rx="2" fill="currentColor"/></svg>
+  </button>
+  <div class="demo-badge" id="demo-badge" hidden>DEMO · premi non validi</div>
+  <canvas id="fx" class="fx"></canvas>
+  <div id="overlays"></div>
+</div>
+<noscript>Per giocare è necessario JavaScript.</noscript>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

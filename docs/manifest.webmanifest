@@ -1,0 +1,30 @@
+{
+  "name": "Il Grimorio del Mixologist",
+  "short_name": "Grimorio",
+  "description": "Slot a premi in consumazioni: 10 giri gratis per ogni drink.",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#12030a",
+  "theme_color": "#12030a",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
