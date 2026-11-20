@@ -1,5 +1,6 @@
 import { appStart } from './app.js';
 
+globalThis.__gdmStarted = true;
 appStart();
 
 if ('serviceWorker' in navigator && location.protocol === 'https:') {

@@ -601,6 +601,18 @@ label.check input { width: 24px; height: 24px; accent-color: var(--gold); flex: 
   <canvas id="fx" class="fx"></canvas>
   <div id="overlays"></div>
 </div>
+<script>
+  // Se il gioco non parte (es. src/index.html aperto come file locale, o anteprima senza JavaScript) spiega cosa fare.
+  setTimeout(function () {
+    if (window.__gdmStarted) return;
+    var d = document.createElement('div');
+    d.setAttribute('style', 'position:fixed;inset:0;z-index:999;display:grid;place-items:center;padding:24px;background:#12030a;color:#f8ecd0;font:18px/1.5 system-ui,sans-serif;text-align:center');
+    d.innerHTML = '<div style="max-width:560px"><h2 style="color:#e2b13c">Il gioco non si è avviato</h2>' +
+      '<p>Questo è il file sorgente. Apri invece <b>docs/index.html</b> (la versione pronta all\'uso), oppure l\'indirizzo GitHub Pages.</p>' +
+      '<p>Su iPad/iPhone non aprirlo dall\'anteprima dell\'app File: aprilo in Safari.</p></div>';
+    document.body.appendChild(d);
+  }, 2500);
+</script>
 <noscript>Per giocare è necessario JavaScript.</noscript>
 <script>
 // ---- js/paytable.js
@@ -3988,6 +4000,7 @@ const __m_js_main_js = (function () {
 const { appStart } = __m_js_app_js;
 
 
+globalThis.__gdmStarted = true;
 appStart();
 
 if ('serviceWorker' in navigator && location.protocol === 'https:') {

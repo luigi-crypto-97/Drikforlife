@@ -1,5 +1,5 @@
 // Service worker: funzionamento offline dopo il primo caricamento.
-const CACHE = 'grimorio-1fe26eb95828';
+const CACHE = 'grimorio-112f39ffe908';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-180.png'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));
